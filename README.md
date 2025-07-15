@@ -4,4 +4,5 @@ HOW TO USE:
   - CD to the file location in CMD
   - Run server.py in CMD
   - Open the local host
+  - Enter the token: "letmein" (changable in the token file)
   - Enjoy!
