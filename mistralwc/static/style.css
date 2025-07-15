@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.chat-container {
+    max-width: 800px;   /* wider container */
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#chat-box {
+    height: 300px;      /* tall enough to see lots of text */
+    width: 600px;       /* nice wide box */
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.4;
+    white-space: pre-wrap;  /* keep line breaks */
+    background-color: #fafafa;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 16px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat .INDEV.</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Chatbot</h2>
+	<h5>(Please be patient my laptop is slow, thanks!)</h5>
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Ask anything">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById("user-input");
+            const message = input.value;
+            if (!message) return;
+
+            const chatBox = document.getElementById("chat-box");
+            chatBox.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            input.value = "";
+
+            const response = await fetch("/ask", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message })
+            });
+
+            const data = await response.json();
+            chatBox.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+        }
+    </script>
+</body>
+</html>
